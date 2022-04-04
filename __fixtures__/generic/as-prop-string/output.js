@@ -1,0 +1,1 @@
+<nav className={"generic"} />;
