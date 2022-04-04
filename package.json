@@ -1,6 +1,6 @@
 {
   "name": "chronstruct-primitives-lite",
-  "version": "0.0.1",
+  "version": "0.0.9",
   "description": "Semantic primitives for developers that improve DX without hurting UX.",
   "homepage": "https://github.com/chronstruct/primitives-lite",
   "main": "src/index.js",

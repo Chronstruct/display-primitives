@@ -86,10 +86,13 @@ module.exports = function (babel) {
         }
 
         switch (element.name) {
-          case "col":
+          case "column":
           case "row":
           case "flex":
           case "grid":
+          case "frame": // alternate name: "wrapper"?
+          case "paper":
+          case "space":
             transform(path.node, element.name)
             break
           case "txt":
