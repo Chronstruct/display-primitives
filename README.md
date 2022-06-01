@@ -2,7 +2,7 @@
 
 Tasks To Do:
 
-- [ ] Rename this repo
+- [x] Rename this repo
 - [ ] Add other display values
 - [ ] Remove opinionated primitives (except row and col)
 - [ ] Update website to use this
@@ -11,6 +11,7 @@ Tasks To Do:
 - [ ] Build new design that uses grid and an image, too
 - [ ] Namespace our classnames with `de-`?
 - [ ] Finish this readme
+- [ ] Add Social Preview in Github settings
 
 ## What is this?
 
