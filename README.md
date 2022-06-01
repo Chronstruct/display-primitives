@@ -3,13 +3,14 @@
 Tasks To Do:
 
 - [x] Rename this repo
-- [ ] Add other display values
-- [ ] Remove opinionated primitives (except row and col)
+- [x] Add other display values
+- [x] Remove opinionated primitives (except row and col)
+- [ ] Publish 1.0
+- [ ] Namespace our classnames with `dp-`?
 - [ ] Update website to use this
 - [ ] Add GH Issue about the generic default problem to make the component typecheck as its `$`
 - [ ] Consider `<flex.row>` and `<flex.col>`
 - [ ] Build new design that uses grid and an image, too
-- [ ] Namespace our classnames with `de-`?
 - [ ] Finish this readme
 - [ ] Add Social Preview in Github settings
 
@@ -22,37 +23,37 @@ NOTE: could also show before and after screenshots of code editor with red under
 Before
 
 ```tsx
-<div /> // display: block;
-<span /> // display: inline;
-<table /> // display: table;
+  <div /> // display: block;
+  <span /> // display: inline;
+  <table /> // display: table;
 
-// :x: These don't exist (notice the red squiglies)
-<flex /> // display: flex;
-<grid /> // display: grid;
+  // :x: These don't exist (notice the red squiglies)
+  <flex /> // display: flex;
+  <grid /> // display: grid;
 ```
 
 After
 
 ```tsx
-<div /> // display: block;
-<span /> // display: inline;
-<table /> // display: table;
+  <div /> // display: block;
+  <span /> // display: inline;
+  <table /> // display: table;
 
-// :checkmark: But we can make up their existence with a Babel Transform :smile: (notice absence of red squiglies)
-<flex /> // display: flex;
-<grid /> // display: grid;
+  // :checkmark: But we can make up their existence with a Babel Transform :smile: (notice absence of red squiglies)
+  <flex /> // display: flex;
+  <grid /> // display: grid;
 ```
 
 | `display` value | html      | Display Elements |
 | --------------- | --------- | ---------------- |
-| `block`         | `<div>`   |                  |
-| `inline`        | `<span>`  |                  |
-| `inline-block`  | :x:       | `<inline-block>` |
+| `block`         | `<div>`   | `<block>`        |
+| `inline`        | `<span>`  | `<inline>`       |
 | `flex`          | :x:       | `<flex>`         |
-| `inline-flex`   | :x:       | `<inline-flex>`  |
-| `grid`          | :x:       |                  |
-| `inline-grid`   | :x:       |                  |
+| `grid`          | :x:       | `<grid>`         |
 | `table`         | `<table>` |                  |
+| `inline-block`  | :x:       | `<inlineblock>`  |
+| `inline-flex`   | :x:       | `<inlineflex>`   |
+| `inline-grid`   | :x:       | `<inlinegrid>`   |
 
 Also added for convenience: `Row` and `Column`. See [The Case for Row and Col]() for more.
 
@@ -64,10 +65,9 @@ Install...
 
 ## API
 
-| Prop | Type                                                 | Description                                                  |
-| ---- | ---------------------------------------------------- | ------------------------------------------------------------ |
-| `$`  | `"div" | "aside" | "main" ...etc` (Default: `"div"`) | The html tag that this element will become (at compile time) |
-| Row2 |                                                      |                                                              |
+| Prop | Type                                                   | Description                                                  |
+| ---- | ------------------------------------------------------ | ------------------------------------------------------------ |
+| `$`  | `"div" \| "aside" \| "main" ...etc` (Default: `"div"`) | The html tag that this element will become (at compile time) |
 
 ## Limitations
 

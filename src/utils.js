@@ -3,10 +3,6 @@
 var printAST = require("ast-pretty-print")
 var t = require("@babel/types")
 
-// from https://stackoverflow.com/questions/43224835
-const allCapsRegex = /^[A-Z]+(?:_[A-Z]+)*$/
-const tagPrefixRegex = /^\$-/
-
 const BASE_PROPS_TO_OMIT = {
   $: true,
 }
@@ -254,6 +250,5 @@ exports.addStringToTemplate = addStringToTemplate
 exports.addQuasiToTemplate = addQuasiToTemplate
 exports.addExpressionToTemplate = addExpressionToTemplate
 exports.renameTag = renameTag
-exports.tagPrefixRegex = tagPrefixRegex
 exports.addBooleanPropertySet = addBooleanPropertySet
 exports.addBooleanProperty = addBooleanProperty

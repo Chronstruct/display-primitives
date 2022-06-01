@@ -3,7 +3,6 @@ var t = require("@babel/types")
 var Utils = require("./utils")
 var renameTag = Utils.renameTag,
   BASE_PROPS_TO_OMIT = Utils.BASE_PROPS_TO_OMIT,
-  tagPrefixRegex = Utils.tagPrefixRegex,
   buildClassNamePropFunction = Utils.buildClassNamePropFunction
 // var printAST = require('ast-pretty-print')
 
@@ -19,10 +18,11 @@ function transform(node, nodeName, defaultTag) {
 
     if (node.openingElement.attributes != null) {
       node.openingElement.attributes.forEach((attribute) => {
-        // Spread props not supported
-        // if (t.isJSXSpreadAttribute(attribute)) {
-        //   return
-        // }
+        // Forward the prop spread on
+        if (t.isJSXSpreadAttribute(attribute)) {
+          props.push(attribute)
+          return
+        }
 
         var name = attribute.name.name
 
@@ -34,9 +34,6 @@ function transform(node, nodeName, defaultTag) {
           } else if (t.isStringLiteral(attribute.value)) {
             otherClassNames = attribute.value
           }
-          // } else if (tagPrefixRegex.test(name)) {
-          //   attribute.name.name = name.replace(tagPrefixRegex, "")
-          //   props.push(attribute)
         } else {
           props.push(attribute)
         }
@@ -86,16 +83,18 @@ module.exports = function (babel) {
         }
 
         switch (element.name) {
+          case "block":
+          case "flex":
+          case "row":
           case "column":
           case "row":
-          case "flex":
           case "grid":
-          case "frame": // alternate name: "wrapper"?
-          case "paper":
-          case "space":
             transform(path.node, element.name)
             break
-          case "txt":
+          case "inline":
+          case "inlineblock":
+          case "inlineflex":
+          case "inlinegrid":
             transform(path.node, element.name, "span")
             break
           // ONLY used in tests!!!

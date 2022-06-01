@@ -1,1 +1,0 @@
-<generic $="button" $-disabled={true} />

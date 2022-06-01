@@ -1,16 +1,10 @@
 <>
-  {
-    /* does NOT handle spread props */
-  }
-  <div className={"generic"} />
+  <div {...{
+    width: variable,
+    height: '20px'
+  }} className={"generic"} />
 
-  {
-    /* does NOT handle spread props of variable */
-  }
-  <div className={"generic"} />
+  <div {...someVar} className={"generic"} />
 
-  {
-    /* handles spread of empty props */
-  }
-  <div className={"generic"} />
+  <div {...{}} className={"generic"} />
 </>;

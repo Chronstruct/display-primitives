@@ -1,3 +1,11 @@
+.block {
+  display: block;
+}
+
+.inline {
+  display: inline;
+}
+
 .flex {
   display: flex;
 }
@@ -14,4 +22,16 @@
 
 .grid {
   display: grid;
+}
+
+.inlineblock {
+  display: inline-block;
+}
+
+.inlineflex {
+  display: inline-flex;
+}
+
+.inlinegrid {
+  display: inline-grid;
 }

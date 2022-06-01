@@ -10,15 +10,16 @@ export interface PrimitiveProps
 declare global {
   namespace JSX {
     interface IntrinsicElements {
-      grid: PrimitiveProps
+      block: PrimitiveProps
       flex: PrimitiveProps
       row: PrimitiveProps
       column: PrimitiveProps
+      grid: PrimitiveProps
 
-      frame: PrimitiveProps
-      paper: PrimitiveProps
-      space: PrimitiveProps
-      txt: PrimitiveProps
+      inline: PrimitiveProps
+      inlineblock: PrimitiveProps
+      inlineflex: PrimitiveProps
+      inlinegrid: PrimitiveProps
     }
   }
 }
