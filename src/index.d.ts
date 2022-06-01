@@ -1,9 +1,9 @@
 export interface PrimitiveProps
   extends React.DetailedHTMLProps<
-    React.HTMLAttributes<HTMLElement>,
+    React.AllHTMLAttributes<HTMLElement>,
     HTMLElement
   > {
-  $?: string | React.Element
+  $?: keyof JSX.IntrinsicElements
 }
 
 // from https://github.com/microsoft/TypeScript/issues/15449#issuecomment-385959396

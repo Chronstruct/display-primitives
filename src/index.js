@@ -20,9 +20,9 @@ function transform(node, nodeName, defaultTag) {
     if (node.openingElement.attributes != null) {
       node.openingElement.attributes.forEach((attribute) => {
         // Spread props not supported
-        if (t.isJSXSpreadAttribute(attribute)) {
-          return
-        }
+        // if (t.isJSXSpreadAttribute(attribute)) {
+        //   return
+        // }
 
         var name = attribute.name.name
 
@@ -34,9 +34,9 @@ function transform(node, nodeName, defaultTag) {
           } else if (t.isStringLiteral(attribute.value)) {
             otherClassNames = attribute.value
           }
-        } else if (tagPrefixRegex.test(name)) {
-          attribute.name.name = name.replace(tagPrefixRegex, "")
-          props.push(attribute)
+          // } else if (tagPrefixRegex.test(name)) {
+          //   attribute.name.name = name.replace(tagPrefixRegex, "")
+          //   props.push(attribute)
         } else {
           props.push(attribute)
         }
