@@ -5,7 +5,8 @@ Tasks To Do:
 - [x] Rename this repo
 - [x] Add other display values
 - [x] Remove opinionated primitives (except row and col)
-- [ ] Publish 1.0
+- [ ] Publish 0.0.1
+- [ ] Update prettier
 - [ ] Namespace our classnames with `dp-`?
 - [ ] Update website to use this
 - [ ] Add GH Issue about the generic default problem to make the component typecheck as its `$`
@@ -13,6 +14,7 @@ Tasks To Do:
 - [ ] Build new design that uses grid and an image, too
 - [ ] Finish this readme
 - [ ] Add Social Preview in Github settings
+- [ ] SWC plugin?
 
 ## What is this?
 
