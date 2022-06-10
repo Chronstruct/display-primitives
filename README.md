@@ -2,23 +2,17 @@
 
 Tasks To Do:
 
-- [x] Rename this repo
-- [x] Add other display values
-- [x] Remove opinionated primitives (except row and col)
-- [ ] Publish 0.0.1
-- [ ] Update prettier
-- [ ] Namespace our classnames with `dp-`?
 - [ ] Update website to use this
-- [ ] Add GH Issue about the generic default problem to make the component typecheck as its `$`
 - [ ] Consider `<flex.row>` and `<flex.col>`
 - [ ] Build new design that uses grid and an image, too
 - [ ] Finish this readme
 - [ ] Add Social Preview in Github settings
-- [ ] SWC plugin?
+- [ ] Namespace our classnames with `dp-`?
+- [ ] SWC plugin? https://swc.rs/docs/usage/plugins
 
 ## What is this?
 
-The browser gives us `<div/>` for `display: block;` and `<span/>` for `display: inline;`, but what about the other `display` values like `flex` and `grid`? This babel transform adds these missing tags/elements.e
+The browser gives us `<div/>` for `display: block;` and `<span/>` for `display: inline;`, but what about the other [display](https://developer.mozilla.org/en-US/docs/Web/CSS/display) values like `flex` and `grid`? This babel transform adds these missing tags/elements.e
 
 NOTE: could also show before and after screenshots of code editor with red underlines for `<flex>` and such.
 
@@ -46,18 +40,23 @@ After
   <grid /> // display: grid;
 ```
 
-| `display` value | html      | Display Elements |
-| --------------- | --------- | ---------------- |
-| `block`         | `<div>`   | `<block>`        |
-| `inline`        | `<span>`  | `<inline>`       |
-| `flex`          | :x:       | `<flex>`         |
-| `grid`          | :x:       | `<grid>`         |
-| `table`         | `<table>` |                  |
-| `inline-block`  | :x:       | `<inlineblock>`  |
-| `inline-flex`   | :x:       | `<inlineflex>`   |
-| `inline-grid`   | :x:       | `<inlinegrid>`   |
+| `display=`       | html      | Display Elements |
+| ---------------- | --------- | ---------------- |
+| `"block"`        | `<div>`   | `<block>`        |
+| `"inline"`       | `<span>`  | `<inline>`       |
+| `"flex"`         | :x:       | `<flex>`         |
+| `"grid"`         | :x:       | `<grid>`         |
+| `"table"`        | `<table>` |                  |
+| `"inline-block"` | :x:       | `<inlineblock>`  |
+| `"inline-flex"`  | :x:       | `<inlineflex>`   |
+| `"inline-grid"`  | :x:       | `<inlinegrid>`   |
 
-Also added for convenience: `Row` and `Column`. See [The Case for Row and Col]() for more.
+Also added for convenience: `row` and `column`. See [The Case for Row and Col]() for more.
+
+| css                                      | html | Display Elements |
+| ---------------------------------------- | ---- | ---------------- |
+| `display: flex; flex-direction: row;`    | :x:  | `<row>`          |
+| `display: flex; flex-direction: column;` | :x:  | `<column>`       |
 
 For convenience, we've also added `<block>` and `<inline>`, even though div and span already exist.
 

@@ -1,13 +1,24 @@
 {
   "name": "display-primitives",
   "version": "0.0.1",
-  "description": "The missing `display` primitives (`<flex>`, `<grid>`, etc).",
+  "description": "The missing `display` primitives (`<flex>`, `<grid>`, etc)",
   "homepage": "https://github.com/chronstruct/display-primitives",
   "main": "src/index.js",
   "scripts": {
+    "lint": "prettier --check src",
+    "lint:fix": "prettier --write src",
     "test": "jest",
     "test-fixtures": "jest __tests__/fixtures.js",
-    "test-playground": "jest __tests__/playground.js"
+    "test-playground": "jest __tests__/playground.js",
+    "postinstall": "husky install"
+  },
+  "lint-staged": {
+    "*.{ts,tsx,js,jsx}": [
+      "prettier --write src"
+    ],
+    "*.css": [
+      "prettier --write src"
+    ]
   },
   "files": [
     "src/",
@@ -43,14 +54,17 @@
     "@babel/preset-env": "^7.0.0",
     "@babel/preset-react": "^7.0.0",
     "@babel/types": "^7.9.5",
+    "@trivago/prettier-plugin-sort-imports": "^3.2.0",
     "ast-pretty-print": "^2.0.1",
     "babel-jest": "^26.0.1",
     "babel-loader": "^8.1.0",
     "babel-plugin-tester": "^9.0.1",
+    "husky": "^8.0.1",
     "jest": "^26.0.1",
+    "lint-staged": "^13.0.1",
     "patch-package": "^6.2.2",
     "postinstall-postinstall": "^2.1.0",
-    "prettier": "^2.0.5",
+    "prettier": "^2.6.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1"
   },

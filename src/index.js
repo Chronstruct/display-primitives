@@ -1,6 +1,6 @@
-"use strict"
-var t = require("@babel/types")
-var Utils = require("./utils")
+'use strict'
+var t = require('@babel/types')
+var Utils = require('./utils')
 var renameTag = Utils.renameTag,
   BASE_PROPS_TO_OMIT = Utils.BASE_PROPS_TO_OMIT,
   buildClassNamePropFunction = Utils.buildClassNamePropFunction
@@ -28,7 +28,7 @@ function transform(node, nodeName, defaultTag) {
 
         if (name in BASE_PROPS_TO_OMIT) {
           return
-        } else if (name === "className") {
+        } else if (name === 'className') {
           if (t.isJSXExpressionContainer(attribute.value)) {
             otherClassNames = attribute.value.expression
           } else if (t.isStringLiteral(attribute.value)) {
@@ -64,13 +64,13 @@ module.exports = function (babel) {
       // or not this is a TSX file.
       if (
         parserOpts.plugins.some(
-          (p) => (Array.isArray(p) ? p[0] : p) === "typescript"
+          (p) => (Array.isArray(p) ? p[0] : p) === 'typescript',
         )
       ) {
         return
       }
 
-      parserOpts.plugins.push("jsx")
+      parserOpts.plugins.push('jsx')
     },
     // ---
     visitor: {
@@ -83,22 +83,22 @@ module.exports = function (babel) {
         }
 
         switch (element.name) {
-          case "block":
-          case "flex":
-          case "row":
-          case "column":
-          case "row":
-          case "grid":
+          case 'block':
+          case 'flex':
+          case 'row':
+          case 'column':
+          case 'row':
+          case 'grid':
             transform(path.node, element.name)
             break
-          case "inline":
-          case "inlineblock":
-          case "inlineflex":
-          case "inlinegrid":
-            transform(path.node, element.name, "span")
+          case 'inline':
+          case 'inlineblock':
+          case 'inlineflex':
+          case 'inlinegrid':
+            transform(path.node, element.name, 'span')
             break
           // ONLY used in tests!!!
-          case "generic":
+          case 'generic':
             transform(path.node, element.name)
             break
         }

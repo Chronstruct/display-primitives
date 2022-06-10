@@ -1,7 +1,7 @@
-"use strict"
+'use strict'
 
-var printAST = require("ast-pretty-print")
-var t = require("@babel/types")
+var printAST = require('ast-pretty-print')
+var t = require('@babel/types')
 
 const BASE_PROPS_TO_OMIT = {
   $: true,
@@ -29,21 +29,21 @@ function buildClassNamePropFunction(t, className, otherClassName) {
     if (t.isStringLiteral(otherClassName)) {
       text += `${otherClassName.value} `
     } else if (t.isExpression(otherClassName)) {
-      finalize(otherClassName, " ")
+      finalize(otherClassName, ' ')
     }
 
     quasis.push(t.templateElement({ raw: `${text}` }))
 
     return t.jSXAttribute(
-      t.jSXIdentifier("className"),
-      t.jSXExpressionContainer(t.templateLiteral(quasis, expressions))
+      t.jSXIdentifier('className'),
+      t.jSXExpressionContainer(t.templateLiteral(quasis, expressions)),
     )
   }
 
   // No user-passed in className, so
   return t.jSXAttribute(
-    t.jSXIdentifier("className"),
-    t.jSXExpressionContainer(t.stringLiteral(className))
+    t.jSXIdentifier('className'),
+    t.jSXExpressionContainer(t.stringLiteral(className)),
   )
 }
 
@@ -52,12 +52,12 @@ function addTemplateToTemplate(target, template) {
     if (target.expressions.length === target.quasis.length) {
       // safe to just push these
       target.expressions = target.expressions.concat(
-        template.expressions.slice(0)
+        template.expressions.slice(0),
       )
       target.quasis = target.quasis.concat(template.quasis.slice(0))
     } else {
       target.expressions = target.expressions.concat(
-        template.expressions.slice(0)
+        template.expressions.slice(0),
       )
 
       // concate the first quasi, then push on the rest
@@ -88,14 +88,14 @@ function addExpressionToTemplate(template, expression) {
  * @param {JSXElement} node
  * @param {string} defaultTag
  */
-function renameTag(node, defaultTag = "div") {
+function renameTag(node, defaultTag = 'div') {
   let tagName = defaultTag
 
   // Get the prop responsible for the tag
   const tagProp = node.openingElement.attributes
     .filter(t.isJSXAttribute)
     .find((prop) => {
-      return prop.name.name === "$"
+      return prop.name.name === '$'
     })
 
   // Use the value of the prop...
@@ -134,7 +134,7 @@ function addBooleanPropertySet(
   staticStyle,
   dynamicStyle,
   jsxAttribute,
-  propertiesToAdd
+  propertiesToAdd,
 ) {
   var { value } = jsxAttribute
   //   console.log("attribute", attribute)
@@ -169,7 +169,7 @@ function addBooleanProperty(
   jsxAttribute,
   key,
   valueMap,
-  config
+  config,
 ) {
   var { value } = jsxAttribute
 
@@ -203,7 +203,7 @@ function addBooleanProperty(
         staticStyle,
         dynamicStyle,
         key,
-        expression in valueMap ? valueMap[expression] : expression
+        expression in valueMap ? valueMap[expression] : expression,
       )
     }
   } else {
@@ -211,7 +211,7 @@ function addBooleanProperty(
       staticStyle,
       dynamicStyle,
       key,
-      value in valueMap ? valueMap[value] : value
+      value in valueMap ? valueMap[value] : value,
     )
   }
 }
