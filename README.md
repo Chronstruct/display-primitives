@@ -5,6 +5,8 @@ Tasks To Do:
 - [ ] Update website to use this
 - [ ] Consider `<flex.row>` and `<flex.col>`
 - [ ] Build new design that uses grid and an image, too
+- [ ] Make importable `<Flex>` components with derived `$-` props
+  - Auto-import or grobally available in tsconfig?
 - [ ] Finish this readme
 - [ ] Add Social Preview in Github settings
 - [ ] Namespace our classnames with `dp-`?
