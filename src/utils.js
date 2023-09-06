@@ -7,6 +7,8 @@ const BASE_PROPS_TO_OMIT = {
   $: true,
 }
 
+const CSS_NAMESPACE = 'dp-'
+
 /**
  * @param {babel.types} t
  * @param {string} className
@@ -18,7 +20,9 @@ function buildClassNamePropFunction(t, className, otherClassName) {
   if (otherClassName != null) {
     const quasis = []
     const expressions = []
-    let text = `${className} `
+
+    // Add namespace prefix
+    let text = `${CSS_NAMESPACE}${className} `
 
     const finalize = (expr, str) => {
       quasis.push(t.templateElement({ raw: text }))

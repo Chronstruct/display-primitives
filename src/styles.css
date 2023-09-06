@@ -1,37 +1,37 @@
-.block {
+.dp-block {
   display: block;
 }
 
-.inline {
+.dp-inline {
   display: inline;
 }
 
-.flex {
+.dp-flex {
   display: flex;
 }
 
-.row {
+.dp-row {
   display: flex;
   flex-direction: row;
 }
 
-.column {
+.dp-column {
   display: flex;
   flex-direction: column;
 }
 
-.grid {
+.dp-grid {
   display: grid;
 }
 
-.inlineblock {
+.dp-inlineblock {
   display: inline-block;
 }
 
-.inlineflex {
+.dp-inlineflex {
   display: inline-flex;
 }
 
-.inlinegrid {
+.dp-inlinegrid {
   display: inline-grid;
 }

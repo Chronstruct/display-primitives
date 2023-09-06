@@ -2,19 +2,21 @@
 
 Tasks To Do:
 
-- [ ] Update website to use this
-- [ ] Consider `<flex.row>` and `<flex.col>`
-- [ ] Build new design that uses grid and an image, too
-- [ ] Make importable `<Flex>` components with derived `$-` props
-  - Auto-import or grobally available in tsconfig?
+- [ ] Build new design that uses grid and an image, too. Start with Mobile.
+- [ ] Add examples for Next and Gatsby
 - [ ] Finish this readme
 - [ ] Add Social Preview in Github settings
-- [ ] Namespace our classnames with `dp-`?
+
+Tasks I Might Do:
+
+- [ ] Consider `<flex.row>` and `<flex.col>`
+- [ ] Make importable `<Flex>` components with derived `$-` props
+  - Auto-import or grobally available in tsconfig?
 - [ ] SWC plugin? https://swc.rs/docs/usage/plugins
 
 ## What is this?
 
-The browser gives us `<div/>` for `display: block;` and `<span/>` for `display: inline;`, but what about the other [display](https://developer.mozilla.org/en-US/docs/Web/CSS/display) values like `flex` and `grid`? This babel transform adds these missing tags/elements.e
+The browser gives us `<div/>` for `display: block;` and `<span/>` for `display: inline;`, but what about the other [display](https://developer.mozilla.org/en-US/docs/Web/CSS/display) values like `flex` and `grid`? This **babel transform** adds these missing tags/elements.e
 
 NOTE: could also show before and after screenshots of code editor with red underlines for `<flex>` and such.
 
@@ -25,7 +27,7 @@ Before
   <span /> // display: inline;
   <table /> // display: table;
 
-  // :x: These don't exist (notice the red squiglies)
+  // ❌ These don't exist (notice the red squiglies)
   <flex /> // display: flex;
   <grid /> // display: grid;
 ```
@@ -37,7 +39,7 @@ After
   <span /> // display: inline;
   <table /> // display: table;
 
-  // :checkmark: But we can make up their existence with a Babel Transform :smile: (notice absence of red squiglies)
+  // ✅ But we can make up their existence with a Babel Transform :smile: (notice absence of red squiglies)
   <flex /> // display: flex;
   <grid /> // display: grid;
 ```
@@ -83,3 +85,4 @@ Install...
 1. runtime perf (I assume)
 2. no import needed
 3. editor treats it (and colors it) like a normal html tag, which I like.
+   1. I also like that the lowercase name (e.g. `<flex>`) denotes it as a leaf node in the render tree (not a compound component)
