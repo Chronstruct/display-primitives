@@ -1,6 +1,6 @@
 {
   "name": "display-primitives",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "The missing `display` primitives (`<flex>`, `<grid>`, etc)",
   "homepage": "https://github.com/chronstruct/display-primitives",
   "main": "src/index.js",
@@ -10,7 +10,8 @@
     "test": "jest",
     "test-fixtures": "jest __tests__/fixtures.js",
     "test-playground": "jest __tests__/playground.js",
-    "postinstall": "husky install"
+    "postinstall": "husky install",
+    "publish": "npm publish"
   },
   "lint-staged": {
     "*.{ts,tsx,js,jsx}": [
