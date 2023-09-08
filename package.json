@@ -10,8 +10,8 @@
     "test": "jest",
     "test-fixtures": "jest __tests__/fixtures.js",
     "test-playground": "jest __tests__/playground.js",
-    "postinstall": "husky install",
-    "publish": "npm publish"
+    "prepare": "husky install",
+    "publish": "npm version patch && git add . && commit -m \"version bump\" && npm publish"
   },
   "lint-staged": {
     "*.{ts,tsx,js,jsx}": [
