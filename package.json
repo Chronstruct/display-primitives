@@ -1,6 +1,6 @@
 {
   "name": "display-primitives",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "The missing `display` primitives (`<flex>`, `<grid>`, etc)",
   "homepage": "https://github.com/chronstruct/display-primitives",
   "main": "src/index.js",
